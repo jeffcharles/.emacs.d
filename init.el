@@ -22,6 +22,13 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/")
              t)
+; install packages
+(mapc
+ (lambda (package)
+   (or (package-installed-p package)
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package))))
+ '(better-defaults clojure-mode evil powerline undo-tree))
 
 (require 'evil)
 (evil-mode 1)
