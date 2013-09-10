@@ -10,6 +10,12 @@
 (setq user-mail-address "jeffreycharles@gmail.com")
 (setq user-full-name "Jeffrey Charles")
 
+(setq whitespace-display-mappings
+      '((space-mark 32 [183] [46] [32])
+        (newline-mark 10 [172 10] [10])
+        (tab-mark 9 [9656 9] [9])))
+(global-whitespace-mode 1)
+
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
