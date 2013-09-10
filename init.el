@@ -1,5 +1,5 @@
-(if (eq system-type 'darwin)
-    (set-keyboard-coding-system nil) ; OS X does some funky stuff by default when internationalization is enabled
+(when (eq system-type 'darwin)
+  (set-keyboard-coding-system nil) ; OS X does some funky stuff by default when internationalization is enabled
   (setq mac-option-key-is-meta nil) ; Use command instead of alt as meta
   (setq mac-command-key-is-meta t)
   (setq mac-command-modifier 'meta)
