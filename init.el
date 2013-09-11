@@ -6,8 +6,6 @@
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
 
-(load-theme 'tango-dark t)
-
 (setq user-mail-address "jeffreycharles@gmail.com")
 (setq user-full-name "Jeffrey Charles")
 
@@ -34,8 +32,10 @@
    (or (package-installed-p package)
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
- '(better-defaults clojure-mode evil evil-paredit paredit powerline
-                   rainbow-delimiters undo-tree))
+ '(better-defaults clojure-mode evil evil-paredit obsidian-theme paredit
+                   powerline rainbow-delimiters undo-tree))
+
+(load-theme 'obsidian t)
 
 (require 'evil)
 (evil-mode 1)
@@ -66,7 +66,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("61a83dbf3d3722d70abee8fb6dbc3566766ff86c098c2a925f2ccfd4d5b3a756" default))))
+ '(custom-safe-themes (quote ("bf42c68919c09268cb40934a66bc75c785001f3872ab5ad85c74988e60809b29" "61a83dbf3d3722d70abee8fb6dbc3566766ff86c098c2a925f2ccfd4d5b3a756" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
