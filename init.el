@@ -28,10 +28,13 @@
    (or (package-installed-p package)
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
- '(better-defaults clojure-mode evil powerline undo-tree))
+ '(better-defaults clojure-mode evil powerline rainbow-delimiters undo-tree))
 
 (require 'evil)
 (evil-mode 1)
+
+(require 'rainbow-delimiters)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
