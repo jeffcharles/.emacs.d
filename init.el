@@ -11,10 +11,14 @@
 (setq user-mail-address "jeffreycharles@gmail.com")
 (setq user-full-name "Jeffrey Charles")
 
+(require 'whitespace)
 (setq whitespace-display-mappings
       '((space-mark 32 [183] [46] [32])
         (newline-mark 10 [172 10] [10])
         (tab-mark 9 [9656 9] [9])))
+(setq whitespace-style
+      (delete 'spaces
+              (delete 'space-mark whitespace-style)))
 (global-whitespace-mode 1)
 
 (require 'package)
