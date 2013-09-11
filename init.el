@@ -21,6 +21,8 @@
               (delete 'space-mark whitespace-style)))
 (global-whitespace-mode 1)
 
+(electric-indent-mode 1) ; auto-indent
+
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
