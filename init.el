@@ -32,13 +32,32 @@
    (or (package-installed-p package)
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
- '(better-defaults clojure-mode evil powerline rainbow-delimiters undo-tree))
+ '(better-defaults clojure-mode evil evil-paredit paredit powerline
+                   rainbow-delimiters undo-tree))
 
 (require 'evil)
 (evil-mode 1)
 
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
+(autoload 'enable-paredit-mode
+  "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(require 'evil-paredit)
+(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook       'evil-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook 'evil-paredit-mode)
+(add-hook 'ielm-mode-hook             'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             'evil-paredit-mode)
+(add-hook 'lisp-mode-hook             'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             'evil-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'evil-paredit-mode)
+(add-hook 'scheme-mode-hook           'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           'evil-paredit-mode)
+(add-hook 'clojure-mode-hook          'enable-paredit-mode)
+(add-hook 'clojure-mode-hook          'evil-paredit-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
