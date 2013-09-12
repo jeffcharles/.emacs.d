@@ -22,10 +22,11 @@
 (electric-indent-mode 1) ; auto-indent
 
 (require 'package)
-(package-initialize)
+; add melpa before initializing (necessary on Windows to install packages)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/")
              t)
+(package-initialize)
 ; install packages
 (mapc
  (lambda (package)
