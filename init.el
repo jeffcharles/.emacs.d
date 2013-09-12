@@ -21,6 +21,8 @@
 
 (electric-indent-mode 1) ; auto-indent
 
+(global-linum-mode 1) ; turn on line numbering
+
 (require 'package)
 ; add melpa before initializing (necessary on Windows to install packages)
 (add-to-list 'package-archives
