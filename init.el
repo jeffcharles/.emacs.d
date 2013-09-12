@@ -9,6 +9,8 @@
 (setq user-mail-address "jeffreycharles@gmail.com")
 (setq user-full-name "Jeffrey Charles")
 
+(setq column-number-mode t)
+
 (require 'whitespace)
 (setq whitespace-display-mappings
       '((space-mark 32 [183] [46] [32])
