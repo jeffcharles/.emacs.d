@@ -33,8 +33,8 @@
    (or (package-installed-p package)
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
- '(better-defaults clojure-mode evil evil-paredit obsidian-theme paredit
-                   powerline rainbow-delimiters undo-tree))
+ '(better-defaults clojure-mode evil evil-paredit load-dir obsidian-theme
+                   paredit powerline rainbow-delimiters undo-tree))
 
 (load-theme 'obsidian t)
 
@@ -61,6 +61,11 @@
 (add-hook 'scheme-mode-hook           'evil-paredit-mode)
 (add-hook 'clojure-mode-hook          'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          'evil-paredit-mode)
+
+; Load all scripts in custom (for non-version controlled stuff)
+(require 'load-dir)
+(setq load-dirs "~/.emacs.d/custom")
+(load-dirs)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
