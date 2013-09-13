@@ -37,8 +37,9 @@
    (or (package-installed-p package)
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
- '(better-defaults clojure-mode evil evil-paredit load-dir obsidian-theme
-                   paredit powerline rainbow-delimiters undo-tree))
+ '(ac-nrepl better-defaults cl-lib clojure-mode dash evil evil-paredit load-dir
+            nrepl obsidian-theme paredit pkg-info powerline rainbow-delimiters
+            undo-tree))
 
 (load-theme 'obsidian t)
 
@@ -65,6 +66,30 @@
 (add-hook 'scheme-mode-hook           'evil-paredit-mode)
 (add-hook 'clojure-mode-hook          'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          'evil-paredit-mode)
+
+(require 'nrepl)
+(add-hook 'nrepl-mode-hook 'subword-mode)
+(add-hook 'nrepl-mode-hook 'paredit-mode)
+(add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
+
+(require 'ac-nrepl)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'nrepl-mode))
+
+; Use tab to auto-complete in the repl
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook
+          'set-auto-complete-as-completion-at-point-function)
+(add-hook 'nrepl-mode-hook
+          'set-auto-complete-as-completion-at-point-function)
+(add-hook 'nrepl-interaction-mode-hook
+          'set-auto-complete-as-completion-at-point-function)
+
+; Use ac-nrepl's documentation in place of nrepl-doc
+(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
 ; Load all scripts in custom (for non-version controlled stuff)
 (require 'load-dir)
