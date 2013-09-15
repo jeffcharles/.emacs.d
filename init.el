@@ -38,8 +38,8 @@
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  '(ac-nrepl better-defaults cl-lib clojure-mode dash evil evil-paredit load-dir
-            nrepl obsidian-theme paredit pkg-info powerline rainbow-delimiters
-            undo-tree))
+            nrepl nrepl-ritz obsidian-theme paredit pkg-info powerline
+            rainbow-delimiters undo-tree))
 
 (load-theme 'obsidian t)
 
@@ -71,6 +71,10 @@
 (add-hook 'nrepl-mode-hook 'subword-mode)
 (add-hook 'nrepl-mode-hook 'paredit-mode)
 (add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
+
+(defun my-nrepl-mode-setup ()
+  (require 'nrepl-ritz))
+(add-hook 'nrepl-interaction-mode-hook 'my-nrepl-mode-setup)
 
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
