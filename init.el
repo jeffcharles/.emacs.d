@@ -6,6 +6,8 @@
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
 
+(server-start)
+
 (setq user-mail-address "jeffreycharles@gmail.com")
 (setq user-full-name "Jeffrey Charles")
 
