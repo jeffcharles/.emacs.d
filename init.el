@@ -38,8 +38,8 @@
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  '(ac-nrepl better-defaults cl-lib clojure-mode dash evil evil-paredit load-dir
-            magit nrepl nrepl-ritz obsidian-theme paredit pkg-info powerline
-            rainbow-delimiters undo-tree))
+            magit midje-mode nrepl nrepl-ritz obsidian-theme paredit pkg-info
+            powerline rainbow-delimiters undo-tree))
 
 (load-theme 'obsidian t)
 
