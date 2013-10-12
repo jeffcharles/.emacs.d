@@ -28,11 +28,10 @@
 (add-hook 'find-file-hook (lambda () (linum-mode 1))) ; turn on line numbering
 
 (require 'package)
-; add melpa before initializing (necessary on Windows to install packages)
+(package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/")
              t)
-(package-initialize)
 ; install packages
 (mapc
  (lambda (package)
