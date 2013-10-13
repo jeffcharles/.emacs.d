@@ -50,6 +50,9 @@
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 
+(require 'midje-mode)
+(add-hook 'clojure-mode-hook 'midje-mode)
+
 (autoload 'enable-paredit-mode
   "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (require 'evil-paredit)
