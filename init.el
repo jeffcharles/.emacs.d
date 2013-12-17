@@ -25,6 +25,9 @@
 
 (electric-indent-mode 1) ; auto-indent
 
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings)) ; turn on simpler window navigation
+
 (add-hook 'find-file-hook (lambda () (linum-mode 1))) ; turn on line numbering
 
 (require 'package)
