@@ -45,7 +45,8 @@
            (package-install package))))
  '(ac-nrepl better-defaults cider cl-lib clojure-mode dash evil evil-paredit
             exec-path-from-shell load-dir magit midje-mode obsidian-theme
-            paredit pkg-info powerline rainbow-delimiters smex undo-tree))
+            paredit pkg-info powerline rainbow-delimiters smex undo-tree
+            yasnippet))
 
 (load-theme 'obsidian t)
 
@@ -60,6 +61,10 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+; yasnippets
+(require 'yasnippet)
+(yas-global-mode 1)
 
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
