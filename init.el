@@ -30,6 +30,8 @@
 
 (add-hook 'find-file-hook (lambda () (linum-mode 1))) ; turn on line numbering
 
+(icomplete-mode 99) ; autocomplete for describe-variable and describe-function
+
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
