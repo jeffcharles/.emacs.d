@@ -35,10 +35,11 @@
 (icomplete-mode 99) ; autocomplete for describe-variable and describe-function
 
 (require 'package)
-(package-initialize)
+(package-initialize) ; The order you need to run this in seems to vary by OS
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/")
              t)
+(package-initialize) ; The order you need to run this in seems to vary by OS
 ; install packages
 (mapc
  (lambda (package)
