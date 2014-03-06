@@ -132,7 +132,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("bf42c68919c09268cb40934a66bc75c785001f3872ab5ad85c74988e60809b29" "61a83dbf3d3722d70abee8fb6dbc3566766ff86c098c2a925f2ccfd4d5b3a756" default)))
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(linum-relative-current-symbol "")
+ '(linum-relative-plusp-offset 0))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
