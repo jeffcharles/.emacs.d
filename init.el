@@ -1,3 +1,5 @@
+(setq inhibit-startup-screen t)
+
 (when (eq system-type 'darwin)
   ; OS X does some funky stuff by default when internationalization is enabled
   (set-keyboard-coding-system nil)
