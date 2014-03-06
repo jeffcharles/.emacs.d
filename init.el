@@ -47,14 +47,16 @@
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  '(ac-nrepl better-defaults cider cl-lib clojure-mode dash evil evil-paredit
-            exec-path-from-shell load-dir magit midje-mode obsidian-theme
-            paredit pkg-info powerline rainbow-delimiters smex undo-tree
-            yasnippet))
+            exec-path-from-shell linum-relative load-dir magit midje-mode
+            obsidian-theme paredit pkg-info powerline rainbow-delimiters smex
+            undo-tree yasnippet))
 
 (load-theme 'obsidian t)
 
 (require 'evil)
 (evil-mode 1)
+
+(require 'linum-relative)
 
 ; Emacs term on OS X has a different PATH by default
 (when (eq system-type 'darwin)
