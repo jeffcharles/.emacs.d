@@ -47,10 +47,10 @@
    (or (package-installed-p package)
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
- '(ac-nrepl better-defaults cider cl-lib clojure-mode dash evil evil-paredit
-            exec-path-from-shell linum-relative load-dir magit midje-mode
-            obsidian-theme paredit pkg-info powerline rainbow-delimiters smex
-            undo-tree yasnippet))
+ '(ac-js2 ac-nrepl better-defaults cider cl-lib clojure-mode dash evil
+          evil-paredit exec-path-from-shell js2-mode js2-refactor linum-relative
+          load-dir magit midje-mode obsidian-theme paredit pkg-info powerline
+          rainbow-delimiters smex undo-tree yasnippet))
 
 (load-theme 'obsidian t)
 
@@ -75,6 +75,11 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+
+; Use js2 mode for js files
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(require 'js2-refactor)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
 
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
