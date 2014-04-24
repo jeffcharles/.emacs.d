@@ -49,8 +49,9 @@
            (package-install package))))
  '(ac-js2 ac-nrepl better-defaults cider cl-lib clojure-mode dash evil
           evil-paredit exec-path-from-shell js2-mode js2-refactor linum-relative
-          load-dir magit midje-mode obsidian-theme paredit pkg-info powerline
-          rainbow-delimiters smex undo-tree yaml-mode yasnippet))
+          load-dir magit markdown-mode midje-mode obsidian-theme paredit
+          pkg-info powerline rainbow-delimiters smex undo-tree yaml-mode
+          yasnippe))
 
 (load-theme 'obsidian t)
 
