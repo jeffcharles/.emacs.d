@@ -51,7 +51,7 @@
           evil-paredit exec-path-from-shell js2-mode js2-refactor linum-relative
           load-dir magit markdown-mode midje-mode obsidian-theme paredit
           pkg-info powerline rainbow-delimiters smex undo-tree yaml-mode
-          yasnippe))
+          yasnippet))
 
 (load-theme 'obsidian t)
 
