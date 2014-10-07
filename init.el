@@ -7,7 +7,10 @@
   (setq mac-command-key-is-meta t)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil)
-  (kill-new "")) ; In OS X, the pasteboard seems borked on start-up
+  ; In OS X, the pasteboard raises quit instead of nil sometimes
+  (defadvice ns-get-pasteboard (around hack-empty-pasteboard compile activate)
+    (condition-case err ad-do-it
+      (quit (message "%s" (cadr err)) nil))))
 
 (server-start)
 
