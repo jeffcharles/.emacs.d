@@ -29,8 +29,6 @@
               (delete 'space-mark whitespace-style)))
 (global-whitespace-mode 1)
 
-(electric-indent-mode 1) ; auto-indent
-
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings)) ; turn on simpler window navigation
 
