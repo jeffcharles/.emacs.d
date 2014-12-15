@@ -50,9 +50,9 @@
            (package-install package))))
  '(ac-js2 ac-nrepl better-defaults cider cl-lib clojure-mode dash editorconfig
           evil evil-paredit exec-path-from-shell js2-mode js2-refactor
-          linum-relative load-dir magit markdown-mode midje-mode obsidian-theme
-          paredit pkg-info powerline rainbow-delimiters smex undo-tree web-mode
-          yaml-mode yasnippet))
+          less-css-mode linum-relative load-dir magit markdown-mode midje-mode
+          obsidian-theme paredit pkg-info powerline rainbow-delimiters smex
+          undo-tree web-mode yaml-mode yasnippet))
 
 ; maximize window on start-up (needs to run after package stuff to work)
 (toggle-frame-maximized)
