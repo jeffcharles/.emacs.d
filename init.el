@@ -64,6 +64,8 @@
 
 (require 'linum-relative)
 
+(require 'editorconfig)
+
 ; Emacs term on OS X has a different PATH by default
 (when (eq system-type 'darwin)
   (exec-path-from-shell-initialize))
