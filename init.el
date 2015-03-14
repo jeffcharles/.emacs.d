@@ -49,10 +49,10 @@
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  '(ac-js2 ac-nrepl better-defaults cider cl-lib clojure-mode dash editorconfig
-          evil evil-paredit exec-path-from-shell js2-mode js2-refactor
-          less-css-mode linum-relative load-dir magit markdown-mode midje-mode
-          obsidian-theme paredit pkg-info powerline rainbow-delimiters smex
-          undo-tree web-mode yaml-mode yasnippet))
+          evil evil-paredit exec-path-from-shell helm helm-descbinds js2-mode
+          js2-refactor jsx-mode less-css-mode linum-relative load-dir magit
+          markdown-mode midje-mode obsidian-theme paredit pkg-info powerline
+          rainbow-delimiters smex undo-tree web-mode yaml-mode yasnippet))
 
 ; maximize window on start-up (needs to run after package stuff to work)
 (toggle-frame-maximized)
@@ -70,10 +70,27 @@
 (when (eq system-type 'darwin)
   (exec-path-from-shell-initialize))
 
-; ido autocomplete on Emacs commands
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+; Helm
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+(setq helm-buffers-fuzzy-matching t
+      helm-move-to-line-cycle-in-source t)
+(global-set-key (kbd "C-h a") 'helm-apropos)
+(global-set-key (kbd "C-h i") 'helm-info-emacs)
+(global-set-key (kbd "C-h b") 'helm-descbinds)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "C-x r l") 'helm-filtered-bookmarks)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "M-s o") 'helm-swoop)
+(global-set-key (kbd "M-s /") 'helm-multi-swoop)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z") 'helm-select-action)
+(require 'helm-config)
+(helm-mode t)
 
 ; yasnippets
 (require 'yasnippet)
