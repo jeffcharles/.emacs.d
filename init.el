@@ -134,12 +134,6 @@
 (add-hook 'cider-mode-hook 'paredit-mode)
 (add-hook 'cider-mode-hook 'rainbow-delimiters-mode)
 
-(require 'ac-nrepl)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-interaction-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-mode))
-
 ; Use tab to auto-complete in the repl
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
